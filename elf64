@@ -1,0 +1,42 @@
+     1                                  	;; User input string, return that string
+     2                                  	
+     3                                  
+     4                                  
+     5                                  	section .bss
+     6 00000000 <res 00000010>          	name resb 16
+     7                                  
+     8                                  	section .text
+     9                                  	global _start
+    10                                  _start:
+    11 00000000 E80500                  	call _getName
+    12 00000003 E80500                  	call _printName
+    13                                  
+    14                                  	mov rax, 60
+    14          ******************       error: instruction not supported in 16-bit mode
+    15                                  	mov rdi, 0
+    15          ******************       error: instruction not supported in 16-bit mode
+    16 00000006 0F05                    	syscall
+    17                                  
+    18                                  _getName:
+    19                                  	mov rax, 0
+    19          ******************       error: instruction not supported in 16-bit mode
+    20                                  	mov rdi, 0
+    20          ******************       error: instruction not supported in 16-bit mode
+    21                                  	mov rsi, name
+    21          ******************       error: instruction not supported in 16-bit mode
+    22                                  	mov rdx, 16
+    22          ******************       error: instruction not supported in 16-bit mode
+    23 00000008 0F05                    	syscall
+    24 0000000A C3                      	ret
+    25                                  
+    26                                  _printName:
+    27                                  	mov rax, 1
+    27          ******************       error: instruction not supported in 16-bit mode
+    28                                  	mov rdi, 1
+    28          ******************       error: instruction not supported in 16-bit mode
+    29                                  	mov rsi, name
+    29          ******************       error: instruction not supported in 16-bit mode
+    30                                  	mov rdx, 16
+    30          ******************       error: instruction not supported in 16-bit mode
+    31 0000000B 0F05                    	syscall
+    32 0000000D C3                      	ret
