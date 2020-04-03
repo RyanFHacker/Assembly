@@ -1,0 +1,10 @@
+default rel
+bits 64
+
+segment	.text
+
+global factorial
+
+factorial:
+	push	rbp
+	mov
